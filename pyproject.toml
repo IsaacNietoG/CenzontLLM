@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cenzontllm"
+version = "0.1.0"
+description = "Framework para generar podcasts científicos en español desde papers"
+authors = ["Isaac Nieto <isaac_jnieto@ciencias.unam.mx>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
