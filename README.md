@@ -6,7 +6,7 @@
 
 ![CenzontLLM](https://img.shields.io/badge/CenzontLLM-Podcast_Science-blue?style=for-the-badge&logo=soundcloud)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
-![License](https://img.shields.io/github/license/tuusuario/cenzontllm)
+![License](https://img.shields.io/github/license/IsaacNietoG/cenzontllm)
 ![Status](https://img.shields.io/badge/status-MVP_in_progress-yellow)
 
 ---
