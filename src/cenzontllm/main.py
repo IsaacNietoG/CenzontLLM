@@ -13,7 +13,7 @@ def run(
 
 @app.command()
 def input(pdf: str = typer.Argument(..., help="Ruta al PDF")):
-    from cenzontllm.input_processor.pipeline import process_pdf
+    from .input_processor.pipeline import process_pdf
     result = process_pdf(pdf, "paper_content.json")
     typer.echo(f"Listo! {len(result['sections'])} secciones extraídas.")
 

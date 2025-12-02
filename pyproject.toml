@@ -6,8 +6,18 @@ authors = ["Isaac Nieto <isaac_jnieto@ciencias.unam.mx>"]
 license = "Apache-2.0"
 readme = "README.md"
 
+
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.10,<3.13"
+typer = {extras = ["all"], version = "^0.12"}
+pydantic = "^2.8"
+rich = "^13.7"
+pymupdf = "^1.24"
+unstructured = {version = "^0.15", extras = ["all-docs"]}
+pdf2image = "^1.17"
+pytesseract = "^0.3.13"
+pillow = "^10.4"
+tqdm = "^4.66"
 
 [build-system]
 requires = ["poetry-core"]
