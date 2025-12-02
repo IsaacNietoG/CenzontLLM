@@ -19,6 +19,16 @@ COPY pyproject.toml poetry.lock* ./
 RUN poetry config virtualenvs.create false && \
     poetry install --only main --no-root --no-interaction --no-ansi
 
+# 2.1 unstructured no descarga chido NTLK, entonces tocó a manita
+RUN python3 -c "\
+import nltk, os; \
+os.makedirs('/usr/local/share/nltk_data/tokenizers', exist_ok=True); \
+os.makedirs('/usr/local/share/nltk_data/taggers', exist_ok=True); \
+nltk.download('punkt_tab', download_dir='/usr/local/share/nltk_data', quiet=True); \
+nltk.download('averaged_perceptron_tagger_eng', download_dir='/usr/local/share/nltk_data', quiet=True); \
+print('NLTK data descargado correctamente')\
+"
+
 COPY . .
 
 # Entrypoint
