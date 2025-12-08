@@ -12,6 +12,7 @@ package-mode = false
 python = ">=3.10,<3.13"
 typer = {extras = ["all"], version = "^0.12"}
 pydantic = "^2.8"
+pydantic-settings = "^2.4"
 rich = "^13.7"
 pymupdf = "^1.24"
 unstructured = {version = "^0.15", extras = ["all-docs"]}
@@ -20,6 +21,8 @@ pytesseract = "^0.3.13"
 pillow = "^10.4"
 tqdm = "^4.66"
 pdfminer-six = {version = "==20240706"}
+langgraph = "^0.2.28"
+langchain-core = "^0.3"
 
 [build-system]
 requires = ["poetry-core"]
