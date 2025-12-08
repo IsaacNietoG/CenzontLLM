@@ -18,7 +18,7 @@ class BaseAgent(ABC):
         # GROQ
         print(f"[GROQ {self.name.upper()}] Llama 3.1 70B trabajando...")
         chat_completion = client.chat.completions.create(
-            messages=[{"role": "user", "content": prompt}],
+            messages=[{"role": "user", "content": input_data}],
             model=settings.MODEL,
             temperature=0.7,
             max_tokens=2048,
