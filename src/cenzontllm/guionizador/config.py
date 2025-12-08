@@ -4,7 +4,6 @@ from typing import Literal
 class Settings(BaseSettings):
     RUN_MODE: Literal["mock", "groq", "ollama"] = "mock"
     GROQ_API_KEY: str = ""
-    OLLAMA_BASE_URL: str = "http://host.docker.internal:11434"  # Para local
     MODEL: str = "llama-3.1-70b-versatile"  # Groq, o "llama3.1:70b" para Ollama
 
     NUM_GUESTS: int = 1
