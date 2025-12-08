@@ -4,7 +4,7 @@ from typing import Literal
 class Settings(BaseSettings):
     RUN_MODE: Literal["mock", "groq", "ollama"] = "mock"
     GROQ_API_KEY: str = ""
-    MODEL: str = "llama-3.1-70b-versatile"  # Groq, o "llama3.1:70b" para Ollama
+    MODEL: str = "llama-3.3-70b-versatile"  # Groq, o "llama3.1:70b" para Ollama
 
     NUM_GUESTS: int = 1
     MAX_REPLICA_ROUNDS: int = 2
