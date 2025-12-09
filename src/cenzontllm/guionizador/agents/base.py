@@ -16,7 +16,7 @@ class BaseAgent(ABC):
             return mock_invoke(self.name, prompt)
 
         # GROQ
-        print(f"[GROQ {self.name.upper()}] Llama 3.1 70B trabajando...")
+        print(f"[GROQ {self.name.upper()}] Llama 3.3 70B trabajando...")
         chat_completion = client.chat.completions.create(
             messages=[{"role": "user", "content": input_data}],
             model=settings.MODEL,

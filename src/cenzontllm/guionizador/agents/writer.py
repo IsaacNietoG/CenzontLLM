@@ -11,6 +11,7 @@ class WriterAgent(BaseAgent):
         # SI ESTAMOS EN MODO GROQ, USAMOS EL LLM REAL
         if settings.RUN_MODE == "groq":
             print("[GROQ WRITER] Generando guion final con Llama 3.1 70B...")
+            print("[GROQ DEBUG] ", conversation)
             prompt = WRITER_PROMPT.format(
                 conversation=conversation,
                 guests=json.dumps(guests, ensure_ascii=False),

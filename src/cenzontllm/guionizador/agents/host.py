@@ -17,7 +17,7 @@ class HostAgent(BaseAgent):
             return json.loads(response)
         except (json.JSONDecodeError, TypeError):
             print("[MOCK DEBUG]: ", response)
-            print("[MOCK] Usando fallback de personalidades y outline")
+            print("[MOCK] JSON Decoding fallido, usando fallback de personalidades y outline")
             return {
                 "guests": [
                     {"name": "Dr. Luis Ramírez", "age": 52, "accent": "mexicano", "bio": "Físico teórico convertido a ML, explica con ejemplos cotidianos", "style": "claro y entusiasta"}
