@@ -58,6 +58,7 @@ def create_podcast_graph(paper_json_path: str) -> Dict:
         print("[WRITER] Generando guion final...")
         conv = "\n".join(f"{t['speaker']}: {t['text']}" for t in state["conversation"])
         script = writer.write(conv, state["guests"], settings.TARGET_MINUTES)
+        print("[WRITER DEBUG] Guión generado: ", script)
         return {"final_script": script}
 
     workflow.add_node("init", init_host)

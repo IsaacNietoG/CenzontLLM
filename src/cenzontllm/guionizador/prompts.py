@@ -8,7 +8,7 @@ Propón:
 2. Personalidad detallada de cada uno (nombre, edad, acento, bio corta, estilo de habla, nivel técnico)
 3. Interview Outline con 10–15 secciones/preguntas en orden lógico (para duración ~{target_minutes} min)
 
-Retorna exclusivamente la respuesta en formato JSON estricto.
+TU RESPUESTA DEBE COMENZAR INMEDIATAMENTE CON EL CARÁCTER {{ Y DEBE TERMINAR EXACTAMENTE CON EL CARÁCTER }}. NO INCLUYAS NINGÚN TEXTO INTRODUCTORIO, EXPLICATIVO, NI LAS ETIQUETAS DE FORMATO (COMO ````json)
 
 Formato JSON estricto:
 {{
