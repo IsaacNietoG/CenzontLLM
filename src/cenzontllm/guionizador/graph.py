@@ -58,7 +58,7 @@ def create_podcast_graph(paper_json_path: str) -> Dict:
         print("[WRITER] Generando guion final...")
         conv = "\n".join(f"{t['speaker']}: {t['text']}" for t in state["conversation"])
         script = writer.write(conv, state["guests"], settings.TARGET_MINUTES)
-        print("[WRITER DEBUG] Guión generado: ", script)
+        print(f"[WRITER] Guion generado ({len(script)} caracteres)")
         return {"final_script": script}
 
     workflow.add_node("init", init_host)
@@ -79,7 +79,7 @@ def create_podcast_graph(paper_json_path: str) -> Dict:
 
     config = {"configurable": {"thread_id": "cenzontllm_demo"}}
 
-    # ← LA CLAVE: estado inicial con todas las claves
+    # Estado inicial vacío pero con todas las claves
     initial_state = {
         "paper": {},
         "guests": [],
@@ -90,9 +90,14 @@ def create_podcast_graph(paper_json_path: str) -> Dict:
         "should_end": False
     }
 
-    result = {}
+    # Ejecutamos y capturamos el estado final
+    final_state = {}
     for step in app.stream(initial_state, config=config):
         if step:
-            result.update(step)
+            final_state.update(step)
 
-    return {"final_script": result.get("final_script", "Error: no se generó guion")}
+    final_script = final_state.get('finalize', {}).get('final_script', "Error: no se generó guion")
+
+    print("[GRAPH DEBUG] Final_script: ", final_script)
+
+    return {"final_script": final_script}
