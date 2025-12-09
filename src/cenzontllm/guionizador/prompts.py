@@ -8,6 +8,8 @@ Propón:
 2. Personalidad detallada de cada uno (nombre, edad, acento, bio corta, estilo de habla, nivel técnico)
 3. Interview Outline con 10–15 secciones/preguntas en orden lógico (para duración ~{target_minutes} min)
 
+Retorna exclusivamente la respuesta en formato JSON estricto.
+
 Formato JSON estricto:
 {{
   "guests": [{{"name": "Dr. Luis Ramírez", "age": 50, "accent": "mexicano", "bio": "...", "style": "académico pero accesible"}}],
