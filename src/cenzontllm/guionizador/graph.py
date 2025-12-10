@@ -43,12 +43,19 @@ def create_podcast_graph(paper_json_path: str) -> Dict:
         print(f"[GUESTS] Ronda {state['round'] + 1}")
         history = "\n".join(f"{t['speaker']}: {t['text']}" for t in state["conversation"])
         new_turns = []
+        paper = state.get("paper", {})
+        
         for q in state["outline"]:
             for i, guest in enumerate(state["guests"]):
-                resp = guest_agents[i].respond(q, history, guest)
+                # Pasar el paper completo al GuestAgent
+                resp = guest_agents[i].respond(q, history, guest, paper)
                 new_turns.append({"speaker": guest["name"], "text": resp})
             new_turns.append({"speaker": "Ana", "text": "¡Perfecto!"})
-        return {"conversation": state["conversation"] + new_turns}
+        
+        return {
+            "conversation": state["conversation"] + new_turns,
+            "round": state["round"] + 1
+        }
 
     def host_evaluate(state: PodcastState):
         print("[HOST] Decidiendo si terminar...")

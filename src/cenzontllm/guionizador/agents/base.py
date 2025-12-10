@@ -13,7 +13,7 @@ class BaseAgent(ABC):
     def invoke(self, input_data: Any) -> str:
         if settings.RUN_MODE == "mock":
             print(f"[MOCK {self.name.upper()}] Procesando...")
-            return mock_invoke(self.name, prompt)
+            return mock_invoke(self.name, input_data)
 
         # GROQ
         print(f"[GROQ {self.name.upper()}] Llama 3.3 70B trabajando...")
