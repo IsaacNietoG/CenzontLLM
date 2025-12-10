@@ -451,7 +451,7 @@ CenzontLLM implementa un patrón de **agentes especializados** donde cada agente
 Los agentes no se comunican directamente. La comunicación se realiza a través del **estado compartido** (`PodcastState`):
 
 1. **HostAgent** escribe en `guests` y `outline`
-2. **GuestAgent** lee `outline` y `conversation`, escribe en `conversation`
+2. **GuestAgent** lee `outline`, `conversation` y el contenido del paper, escribe en `conversation`
 3. **HostAgent** lee `conversation` para evaluar
 4. **WriterAgent** lee `conversation` y `guests` para generar guion
 
