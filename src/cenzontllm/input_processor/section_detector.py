@@ -3,13 +3,47 @@ from unstructured.documents.elements import Title, NarrativeText, ListItem
 import re
 
 SECTION_KEYWORDS = {
+    # Secciones principales estándar
     "Abstract": ["resumen", "abstract"],
     "Introduction": ["introducción", "introduction"],
-    "Methods": ["métodos", "materiales", "methods", "methodology"],
+    "Background": ["antecedentes", "background", "contexto", "context"],
+    "Related Work": ["trabajo relacionado", "related work", "estado del arte", "state of the art", "related works"],
+    "Literature Review": ["revisión de literatura", "literature review", "revisión bibliográfica", "bibliographic review"],
+    
+    # Metodología y métodos
+    "Methods": ["métodos", "materiales", "methods", "methodology", "metodología"],
+    "Methodology": ["metodología", "methodology"],
+    "Materials and Methods": ["materiales y métodos", "materials and methods"],
+    "Experimental Setup": ["configuración experimental", "experimental setup", "setup experimental"],
+    "Implementation": ["implementación", "implementation"],
+    "Architecture": ["arquitectura", "architecture"],
+    "Model": ["modelo", "model"],
+    "System Design": ["diseño del sistema", "system design", "diseño de sistema"],
+    "Dataset": ["dataset", "datos", "data", "conjunto de datos"],
+    "Data": ["datos", "data"],
+    
+    # Experimentos y resultados
+    "Experiments": ["experimentos", "experiments", "experimentación", "experimentation"],
     "Results": ["resultados", "results"],
+    "Evaluation": ["evaluación", "evaluation"],
+    "Analysis": ["análisis", "analysis"],
+    "Performance": ["rendimiento", "performance", "desempeño"],
+    "Experiments and Results": ["experimentos y resultados", "experiments and results"],
+    
+    # Discusión y conclusiones
     "Discussion": ["discusión", "discussion"],
-    "Conclusion": ["conclusión", "conclusions"],
-    "References": ["referencias", "bibliografía", "references"]
+    "Conclusion": ["conclusión", "conclusions", "conclusiones"],
+    "Conclusions": ["conclusiones", "conclusions"],
+    "Summary": ["resumen", "summary", "síntesis"],
+    "Future Work": ["trabajo futuro", "future work", "trabajos futuros", "future works"],
+    "Limitations": ["limitaciones", "limitations", "limitaciones del estudio"],
+    
+    # Referencias y apéndices
+    "References": ["referencias", "bibliografía", "references", "bibliography", "citas", "citations"],
+    "Bibliography": ["bibliografía", "bibliography"],
+    "Acknowledgments": ["agradecimientos", "acknowledgments", "acknowledgements", "reconocimientos"],
+    "Appendix": ["apéndice", "appendix", "apéndices", "appendices"],
+    "Appendices": ["apéndices", "appendices"],
 }
 
 def _is_section_header(text: str) -> tuple[bool, str]:
