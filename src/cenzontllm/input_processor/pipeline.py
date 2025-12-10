@@ -20,8 +20,8 @@ def process_pdf(pdf_path: str, output_json: str = None) -> dict:
     sections = group_into_sections(elements)
     
     # Extraer imágenes (si hay) (feature con GPU, WIP)
-    image_elements = [e for e in elements if hasattr(e, "image_path")]
-    figure_captions = generate_figure_captions([e.image_path for e in image_elements if hasattr(e, "image_path")])
+    image_elements = [e for e in elements if hasattr(e, "image_path") and e.image_path]
+    figure_captions = generate_figure_captions([e.image_path for e in image_elements])
     
     result = {
         "metadata": metadata,
